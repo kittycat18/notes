@@ -1,4 +1,5 @@
 use_synth :piano
+rihanna ="C:/Users/chloe_holton/Downloads/rihanna_audio.wav"
 
 #m1
 play 62
@@ -38,3 +39,4 @@ play 62
 sleep 0.25
 play 69
 sleep 0.5
+
