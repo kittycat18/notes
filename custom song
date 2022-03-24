@@ -1,42 +1,82 @@
 use_synth :piano
-rihanna ="C:/Users/chloe_holton/Downloads/rihanna_audio.wav"
-
-#m1
-play 62
-sleep 1
-play 62
-sleep 0.25
-play 62
-sleep 0.25
-play 62
-sleep 0.5
-play 71
-sleep 0.5
-play 62
-sleep 0.5
-play 62
-sleep 0.5
-play :cs4
-sleep 0.25
-play :cs4
-sleep 0.25
+only_girl = "C:/Users/chloe_holton/Documents/Audacity/chloeholton_girl.wav"
+what_name = "C:/Users/chloe_holton/Documents/Audacity/chloeholton_whatsMyName.wav"
+drake = "C:/Users/chloe_holton/Documents/Audacity/chloeholton_drake.wav"
 
 
-#m2
-play 69
-sleep 1
-play 69
-sleep 0.5
-play 69
-sleep 0.5
-play 69
-sleep 0.5
-play 69
-sleep 0.5
-play 69
-sleep 0.5
-play 62
-sleep 0.25
-play 69
-sleep 0.5
+live_loop :notes do
+  sample what_name
+  8.times do
+    with_fx :wobble do
+      #m1
+      play 62
+      sleep 1
+      play 62
+      sleep 0.25
+      play 62
+      sleep 0.25
+      play 62
+      sleep 0.5
+      play 71
+      sleep 0.5
+      play 62
+      sleep 0.5
+      play 62
+      sleep 0.5
+      play :cs4
+      sleep 0.25
+      play :cs4
+      sleep 0.25
+    end
+  end
+end
 
+sleep 8
+
+live_loop :drum do
+  sample drake
+  32.times do
+    sample :drum_snare_soft, amp: 5
+    sleep 1
+  end
+  stop
+end
+
+sleep 8
+
+live_loop :perc do
+  sample what_name
+  24.times do
+    sample :glitch_perc5
+    sleep 1
+  end
+  stop
+end
+
+sleep 16
+
+live_loop :notes2 do
+  sample only_girl
+  2.times do
+    with_fx :wobble do
+      #m2
+      play 69
+      sleep 1
+      play 69
+      sleep 0.5
+      play 69
+      sleep 0.5
+      play 69
+      sleep 0.5
+      play 69
+      sleep 0.5
+      play 69
+      sleep 0.5
+      play 62
+      sleep 0.25
+      play 69
+      sleep 0.25
+    end
+    stop
+  end
+end
